@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Gym DZ - تمارين، تغذية، وبرامج رياضية بالعربية والدارجة الجزائرية">
+  <title>Gym DZ | قوّي جسمك</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Gym DZ الرئيسية"><span class="brand-icon">✦</span><span>GYM <b>DZ</b></span></a>
+    <button id="installBtn" class="install-btn" hidden>ثبّت التطبيق</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">منصتك الرياضية الجزائرية</p>
+        <h1>قوّي جسمك.<br><span>طوّر مستواك.</span></h1>
+        <p class="hero-sub">تمارين، تغذية، وبرامج تدريب تناسبك — من أول يوم في الجيم حتى المستوى المتقدم.</p>
+        <a class="primary-btn" href="#programs">ابدأ رحلتك <span>←</span></a>
+      </div>
+      <div class="hero-art" aria-label="رسم زخرفي للياقة البدنية">
+        <div class="ring ring-one"></div><div class="ring ring-two"></div>
+        <div class="weight">GYM<br><strong>DZ</strong></div>
+        <div class="hero-tag">TRAIN SMART<br><b>STAY CONSISTENT</b></div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="section-heading"><div><p class="eyebrow">اختار هدفك</p><h2>واش حاب تحقق؟</h2></div><span class="section-mark">01 / أهدافك</span></div>
+      <div class="goal-grid">
+        <button class="goal-card" data-goal="muscle"><span class="goal-icon">↗</span><h3>بناء العضلات</h3><p>تمارين مقاومة وتدرّج في الأوزان.</p><span class="card-link">شوف النصائح ←</span></button>
+        <button class="goal-card" data-goal="fat"><span class="goal-icon">⚡</span><h3>التنشيف</h3><p>نقص الدهون تدريجيًا مع الحفاظ على العضلات.</p><span class="card-link">شوف النصائح ←</span></button>
+        <button class="goal-card" data-goal="food"><span class="goal-icon">◈</span><h3>التغذية</h3><p>أفكار وجبات ومعلومات عن البروتين والسعرات.</p><span class="card-link">شوف النصائح ←</span></button>
+      </div>
+      <div id="goalDetails" class="detail-panel" hidden></div>
+    </section>
+
+    <section class="section" id="workouts">
+      <div class="section-heading"><div><p class="eyebrow">تدرّب بذكاء</p><h2>تمارين أساسية</h2></div><span class="section-mark">02 / التمارين</span></div>
+      <div class="filter-row" role="group" aria-label="تصفية التمارين">
+        <button class="filter active" data-filter="all">الكل</button>
+        <button class="filter" data-filter="chest">الصدر</button>
+        <button class="filter" data-filter="back">الظهر</button>
+        <button class="filter" data-filter="legs">الرجلين</button>
+        <button class="filter" data-filter="shoulders">الكتفين</button>
+      </div>
+      <div id="exerciseGrid" class="exercise-grid"></div>
+      <p class="note">ابدأ بوزن تقدر تتحكم فيه، تعلّم التقنية الصحيحة، وأوقف التمرين إذا حسّيت بألم حاد.</p>
+    </section>
+
+    <section class="section split-section" id="nutrition">
+      <div>
+        <p class="eyebrow">غذّي جسمك</p><h2>التغذية أساس التقدم</h2>
+        <p class="muted">ما تحتاجش أكل غالي باش تبدأ. اختار أطعمة متوفرة، ونوّع بين البروتين والنشويات والخضر والفواكه.</p>
+        <ul class="check-list"><li>البيض، العدس، السردين والدجاج مصادر بروتين.</li><li>الأرز والبطاطا والخبز يمدّوك بالطاقة للتمرين.</li><li>اشرب الماء بانتظام ونظّم نومك.</li></ul>
+      </div>
+      <div class="nutrition-card">
+        <div class="nutrition-top"><span>حاسبة البروتين التقريبية</span><span class="pill">تقدير عام</span></div>
+        <label for="weight">وزنك بالكيلوغرام</label>
+        <div class="input-row"><input id="weight" type="number" min="25" max="250" placeholder="مثال: 75"><span>كغ</span></div>
+        <label for="goalType">هدفك</label>
+        <select id="goalType"><option value="1.2">صحة عامة / نشاط خفيف</option><option value="1.6" selected>بناء العضلات / تدريب منتظم</option><option value="1.8">تدريب مقاومة مكثّف</option></select>
+        <button id="calcProtein" class="primary-btn full">احسب التقدير</button>
+        <p id="proteinResult" class="result" aria-live="polite">أدخل وزنك للحصول على تقدير يومي تقريبي.</p>
+        <small>هذا تقدير تثقيفي وليس وصفة طبية. الاحتياجات تختلف حسب العمر والصحة والنشاط.</small>
+      </div>
+    </section>
+
+    <section class="section" id="weekly">
+      <div class="section-heading"><div><p class="eyebrow">خطّة بسيطة</p><h2>برنامج أسبوعي للمبتدئ</h2></div><span class="section-mark">03 / الاستمرارية</span></div>
+      <div class="week-grid">
+        <div><b>السبت</b><span>تمرين كامل للجسم</span></div><div><b>الأحد</b><span>مشي أو راحة</span></div>
+        <div><b>الاثنين</b><span>تمرين كامل للجسم</span></div><div><b>الثلاثاء</b><span>راحة واسترجاع</span></div>
+        <div><b>الأربعاء</b><span>مشي خفيف / حركة</span></div><div><b>الخميس</b><span>اختياري حسب الاسترجاع</span></div>
+        <div><b>الجمعة</b><span>راحة</span></div>
+      </div>
+      <p class="note">هذا مثال عام؛ عدّل البرنامج حسب وقتك وخبرتك وأي تعليمات طبية عندك.</p>
+    </section>
+
+    <section class="cta">
+      <p class="eyebrow">خطوة بخطوة</p><h2>النتائج تحتاج صبر واستمرارية.</h2><p>سجّل تقدمك، تعلّم التقنية، وخلي كل أسبوع أحسن من اللي قبله.</p>
+      <button id="tipBtn" class="outline-btn">أعطني نصيحة اليوم</button><p id="dailyTip" class="daily-tip" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-icon">✦</span><span>GYM <b>DZ</b></span></a><p>محتوى تثقيفي رياضي — تمرّن بأمان.</p><span>© <span id="year"></span> Gym DZ</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
